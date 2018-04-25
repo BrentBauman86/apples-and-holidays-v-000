@@ -58,9 +58,11 @@ end
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
+  require "pry"
 holiday_hash.collect {|season, holidays|
   holidays.collect {|holiday_name, supplies|
     supplies.include?("BBQ") ? holiday_name : nil
+binding.pry
   }
 }.flatten.compact
 end
